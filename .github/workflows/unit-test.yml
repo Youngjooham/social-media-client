@@ -10,16 +10,15 @@ jobs:
 
     steps:
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/checkout@v2
+        uses: actions/checkout@main
 
       - name: Set up NodeJS
-        uses: actions/setup-node@v2 
+        uses: actions/setup-node@v1
         with:
           node-version: 16
-          cache: 'npm'
 
       - name: Install all dependencies
         run: npm install
 
       - name: Run Tests
-        run: npm run test-unit -- --passWithNoTests 
+        run: npm run test-unit
